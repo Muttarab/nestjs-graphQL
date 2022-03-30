@@ -10,6 +10,18 @@ export enum Projecttype {
 }
 
 @ObjectType()
+export class Item {
+  @Field()
+  description: string;
+
+  @Field()
+  rate: number;
+
+  @Field()
+  quantity: number
+}
+
+@ObjectType()
 @Entity()
 export class Project {
 
@@ -32,6 +44,15 @@ export class Project {
     default: Projecttype.WEB
   })
   projecttype: Projecttype;
+
+  @Field(type => [Item])
+  @Column({
+    type: 'jsonb',
+    array: false,
+    default: [],
+    nullable: false,
+  })
+  Items: Item[];
 
   @OneToMany(() => Employee, employee => employee.project)
   @Field(() => [Employee], { nullable: true })

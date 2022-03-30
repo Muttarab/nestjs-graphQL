@@ -13,11 +13,18 @@ type Employee {
   employee: Employee!
 }
 
+type Item {
+  description: String!
+  rate: Float!
+  quantity: Float!
+}
+
 type Project {
   id: String!
   name: String!
   code: Int!
   projecttype: String!
+  Items: [Item!]!
   employees: [Employee!]
 }
 
@@ -47,6 +54,13 @@ input CreateProjectInput {
   name: String!
   code: Int!
   projecttype: String!
+  items: [ItemDTO!]!
+}
+
+input ItemDTO {
+  description: String!
+  rate: Float!
+  quantity: Float!
 }
 
 input UpdateProjectInput {
@@ -54,4 +68,5 @@ input UpdateProjectInput {
   name: String!
   code: Int!
   projecttype: String!
+  items: [ItemDTO!]!
 }
