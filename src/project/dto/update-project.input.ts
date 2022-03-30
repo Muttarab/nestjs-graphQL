@@ -1,4 +1,5 @@
 import { InputType, Field, Int } from '@nestjs/graphql';
+import { Projecttype } from '../project.entity';
 
 @InputType()
 export class UpdateProjectInput {
@@ -10,4 +11,7 @@ export class UpdateProjectInput {
 
   @Field(() => Int)
   code: number
+
+  @Field()
+  projecttype: Projecttype;
 }

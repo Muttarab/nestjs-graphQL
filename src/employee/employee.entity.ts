@@ -25,7 +25,7 @@ export class Employee {
     @Column({ nullable: true })
     city: string
 
-    @ManyToOne(() => Project, project => project.employees)
+    @ManyToOne(() => Project, project => project.employees,{eager:true})
     @Field(() => Project)
     project: Project
 

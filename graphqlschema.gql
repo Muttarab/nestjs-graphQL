@@ -17,6 +17,7 @@ type Project {
   id: String!
   name: String!
   code: Int!
+  projecttype: String!
   employees: [Employee!]
 }
 
@@ -45,10 +46,12 @@ input EmployeeCreateDTO {
 input CreateProjectInput {
   name: String!
   code: Int!
+  projecttype: String!
 }
 
 input UpdateProjectInput {
   id: String!
   name: String!
   code: Int!
+  projecttype: String!
 }
