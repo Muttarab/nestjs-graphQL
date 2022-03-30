@@ -1,5 +1,4 @@
 import { InputType, Field, Int } from '@nestjs/graphql';
-import { Currency } from '../project.entity';
 
 @InputType()
 export class UpdateProjectInput {
